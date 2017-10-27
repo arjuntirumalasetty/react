@@ -58,7 +58,6 @@ React components :
 
 Button increment counter example : 
 
-// Write JavaScript here and press Ctrl+Enter to execute
 class Button extends React.Component{
 constructor(props){
 super(props);
@@ -102,3 +101,5 @@ super(props);
  }
 
 ReactDOM.render(<App/>,mountNode);
+
+URL to start project from scrtach : https://www.andrewhfarmer.com/react-from-scratch/
