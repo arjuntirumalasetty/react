@@ -108,3 +108,35 @@ URL to start project from scrtach : https://www.andrewhfarmer.com/react-from-scr
 create folder containers and place App.js and Button.js into it.
 create dist folder
 create webpack folder and place webpack.dev.config.js
+
+Working with data : 
+	- If the user has no interactions with component. Start component as a function component.
+	- Only use class component when you need to manage state object, which is usually done on top level component.
+	
+Example on data handling :
+	
+	const Card  = (props) => {
+	return(
+  <div style={{margin: '2en'}}>
+  	<img width="75" src={props.avatar_url} />
+    <div style={{display : 'inline-block',marginLeft: 10}}>
+  		<div>{props.name}</div>
+    	<div>Facebook</div>
+    </div>
+  </div>
+  );
+}
+
+let data = [
+						{avatar_url: "https://avatars3.githubusercontent.com/u/3790597?v=4",name : "Hani M. K.",company : "HMK"},
+            {avatar_url: "https://avatars0.githubusercontent.com/u/20653643?v=4",name : "Cathy0807",company : "Facebook"}
+]
+
+const CardList = (props) => {
+		return(
+    		<div>
+        	{props.cards.map(card =><Card {...card}/>)}
+        </div>
+    )
+}
+ReactDOM.render(<CardList cards={data}/>,mountNode);
